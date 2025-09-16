@@ -51,7 +51,8 @@ const FinalReport: React.FC<FinalReportProps> = ({ allData, onAccept }) => {
 
 
     const generateReport = async (isRobustify = false) => {
-        let loadingInterval: NodeJS.Timeout | undefined;
+        // FIX: The return type of `setInterval` in the browser is `number`, not `NodeJS.Timeout`. Using `ReturnType` makes this type-safe.
+        let loadingInterval: ReturnType<typeof setInterval> | undefined;
         if (!isRobustify) {
             if (devMode) {
                 setIsLoading(true);

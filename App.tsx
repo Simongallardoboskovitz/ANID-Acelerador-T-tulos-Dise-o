@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect, useContext } from 'react';
 import Header from './components/Header';
 import ProfileForm from './components/ProfileForm';
@@ -21,7 +22,6 @@ import WorkPlan from './components/WorkPlan';
 import FinalReport from './components/FinalReport';
 import UserResearch from './components/UserResearch';
 import TimeUpPopup from './components/TimeUpPopup';
-import DevTools from './components/DevTools';
 
 
 const App: React.FC = () => {
@@ -278,7 +278,6 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen text-black bg-[#f5f5f5] pb-28">
-            <DevTools />
             {showWarning && <WarningPopup onComplete={() => setShowWarning(false)} />}
             {showDesignPortalsPopup && <DesignPortalsPopup onComplete={() => setShowDesignPortalsPopup(false)} />}
             {showTimeUpPopup && <TimeUpPopup onExtend={handleExtendTimer} onContinue={handleContinueFromPopup} />}
